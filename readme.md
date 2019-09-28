@@ -12,3 +12,41 @@
 `max_heap`,`min_heap`の２種類ある。
 
 [わかりやすい参考](https://medium.com/@yasufumy/data-structure-heap-ecfd0989e5be)
+
+## DFS(Deapth First Search), 深さ優先探索
+[abc119 D](https://atcoder.jp/contests/abc119/tasks/abc119_c)
+[解法](https://atcoder.jp/contests/abc119/submissions/7567907)
+
+動的プログラミングを使う
+
+[わかりやすい参考](https://pyteyon.hatenablog.com/entry/2019/03/01/211133)
+
+## 約数
+[abc142 D](https://atcoder.jp/contests/abc142/tasks/abc142_d)
+[解法](https://atcoder.jp/contests/abc142/submissions/7769609)
+
+L(N**0.5)
+```python
+def divisor(n): #nの約数を全て求める
+    i = 1
+    table = []
+    while i * i <= n:
+        if n%i == 0:
+            table.append(i)
+            table.append(n//i)
+        i += 1
+    table = list(set(table))
+    return table
+```
+
+## 素数判定
+L(N**0.5)
+```python
+def is_prime(n):　＃nは素数か判定
+    if n == 1:
+        return False
+    for i in range(2,int(n**0.5)+1):
+        if n % i == 0:
+            return False
+    return True
+```
