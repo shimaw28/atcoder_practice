@@ -18,8 +18,13 @@
 [解法](https://atcoder.jp/contests/abc119/submissions/7567907)
 
 動的プログラミングを使う
+p34,　poj2336
 
 [わかりやすい参考](https://pyteyon.hatenablog.com/entry/2019/03/01/211133)
+
+## BSF (Breadth first search)
+
+p36,
 
 ## 約数
 [abc142 D](https://atcoder.jp/contests/abc142/tasks/abc142_d)
@@ -50,3 +55,34 @@ def is_prime(n):　＃nは素数か判定
             return False
     return True
 ```
+
+# 実装
+## stack
+```python 
+stack = [3, 4, 5]
+#add
+>>> stack = [3, 4, 5]
+>>> stack.append(6)
+>>> stack
+[3, 4, 5, 6]
+>>> stack.pop()
+6
+>>> stack
+[3, 4, 5]
+```
+
+## que
+```python
+>>> from collections import deque
+>>> queue = deque(["Erric", "John", "Mary"])
+>>> queue.append("Josh")
+>>> queue
+deque(['Erric', 'John', 'Mary', 'Josh'])
+>>> queue.popleft()
+'Erric'
+>>> queue.popleft()
+'John'
+>>> queue
+deque(['Mary', 'Josh'])
+```
+
