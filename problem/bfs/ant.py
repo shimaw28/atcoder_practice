@@ -1,3 +1,5 @@
+#p38
+
 n, m = 10, 10
 maze = [
     "#S######.#",
@@ -14,38 +16,38 @@ maze = [
 
 INF = 10**9
 #スタート地点とゴール地点
-sx, sy = 1, 0
-gx, gy = 8, 9
+sx, sy = 0, 1
+gx, gy = 9, 8
 
 #上下左右の移動を表す
-dx, dy = [-1, 0, 1, 0], [0, -1, 1, 0]
+dx, dy = [-1, 0, 1, 0], [0, -1, 0, 1]
 
 #スタートからの最短距離（初期化)
 from collections import deque
-d = [[INF]*n]*m
+d = [[INF for i in range(n)] for j in range(m)]
 #Queueを作成
 queue = deque()
 
 #スタート地点を
-queue.append((sy, sx))
-d[sy][sx] = 0
+queue.append((sx, sy))
+d[sx][sy] = 0
 
 while len(queue) > 0:
     p = queue.popleft()
-    y, x, = p[0], p[1]
+    x, y, = p[0], p[1]
 
     if x==gx and y==gy:
         break
 
     #移動
     for i in range(4):
-        ny, nx = y+dy[i], x+dx[i] #新しいますをnx,nyとする
+        nx, ny = x+dx[i], y+dy[i] #新しいますをnx,nyとする
 
         #枠内かつINFであればdを記入する
         if 0<=nx and nx<n and \
-                0<ny and ny<m and \
-                maze[ny][nx] != "#" and d[ny][nx] == INF:
-            d[ny][nx] == d[y][x]+1
-            queue.append((ny, nx))
+                0<=ny and ny<m and \
+                maze[nx][ny] != "#" and d[nx][ny] == INF:
+            d[nx][ny] = d[x][y]+1
+            queue.append((nx, ny))
 
-print(d[y][x])
+print(d[gx][gy])

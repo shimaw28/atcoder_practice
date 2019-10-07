@@ -25,6 +25,7 @@ p34,　poj2336
 ## BSF (Breadth first search)
 
 p36,
+キューとメモを使ってとく
 
 ## 約数
 [abc142 D](https://atcoder.jp/contests/abc142/tasks/abc142_d)
@@ -55,6 +56,9 @@ def is_prime(n):　＃nは素数か判定
             return False
     return True
 ```
+
+# 貪欲法
+p42
 
 # 実装
 ## stack
