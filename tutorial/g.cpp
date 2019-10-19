@@ -3,17 +3,10 @@ using namespace std;
 
 
 int main() {
-    int x;
-    cin >> x;
+    int a;
 
-    if (x < 10)
-    {
-        cout << "smaller" << endl;
-    
-    } else
-    {
-        cout << "not small" << endl;
-    }
-    
-    cout << "end" << endl;
+    cin >> a;
+
+    cout << a*10 << endl;
 }
+
