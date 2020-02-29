@@ -1,6 +1,19 @@
 # Tips
 `https://atcoder.jp/contests/abc141/tasks/abc141_d`のように直接問題ページに行くと混まない
 
+# mod
+## modの余剰
+[URL](https://img.atcoder.jp/abc156/editorial.pdf)
+```
+(X / Y) mod (10**9+7) = X * Y**((10**9+7)-2) mod (10**9+7)
+
+```
+
+## mod付きの組み合わせ
+`tutorial/combination/cmb.py`
+[URL](https://atcoder.jp/contests/abc156/submissions/10360982)
+
+
 # 解法別問題
 ## heap sort, 優先付けキュー
 [2019/9/15　abc141　D](https://atcoder.jp/contests/abc141/tasks/abc141_d)  
