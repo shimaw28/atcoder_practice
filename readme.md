@@ -24,6 +24,32 @@ for i in product([0, 1], repeat=N)
 
 ## 二分探索(binary_search)
 
+```python
+def binsearch(lst, th, ud="up"):
+    '''
+    udは右側探索か左側探索か
+    eg:
+    lst=[1,2,4,6,8], th=4
+    -> 2 ("up"), 3 ("down") #何番目にthを挿入できるか
+    '''
+
+    left, right = -1, len(lst)
+    while right - left > 1:
+        mid = (left + right) // 2
+        if ud == "up":
+            if lst[mid] > th:
+                right = mid
+            else:
+                left = mid
+        else:
+            if lst[mid] >= th:
+                right = mid
+            else:
+                left = mid
+
+    return right if ud == "up" else left
+```
+
 [アルゴリズムを勉強するなら二分探索から始めよう！](https://codezine.jp/article/detail/9900?p=2)
 
 [Python標準ライブラリ：順序維持のbisect](https://qiita.com/ta7uw/items/d6d8f0ddb215c3677cd3)
